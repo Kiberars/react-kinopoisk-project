@@ -1,15 +1,26 @@
 import { MoveCard } from './components/MoveCrad'
+import data from './data/dataMoves.json'
 
 function App() {
+ 
+ 
+
 
   return (
     <>
-      <MoveCard imageMove={'/MoveImage/Move1.webp'} 
-      titleMove={"Вампиры"} 
-      descriptionMove={"Миролюбивое семейство деда Славы готовится к схватке с кровожадным уральским кланом. Финал бессмертного хита"}
-      ratingMove={"8.3"}/>
+      <div>
+        {data.movies.map((movie,index)=>(
+          <div key={index}>
+           
+            <MoveCard imageMove={movie.img} 
+            titleMove={movie.title} 
+            descriptionMove={movie.description}
+            ratingMove={movie.rating}/>
+          </div>
+        ))}        
+      </div>      
     </>
-  )
-}
+  );
+};
 
 export default App
