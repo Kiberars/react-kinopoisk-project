@@ -21,7 +21,7 @@ function App() {
             <MoveCard imageMove={movie.img} 
             titleMove={movie.title} 
             descriptionMove={movie.description}
-            ratingMove={movie.rating}/>
+            ratingMove={movie.rating} urlMove={movie.url}/>
           </div>
         ))}        
       </main>      
