@@ -15,18 +15,18 @@
 }
 
 a {
-  color: #ac64ff;
+  color: #fff2eb;
   text-decoration: none;
   transition: color 0.3s;
 }
 a:hover {
-  color: #9a44fc;
+  color: #ff5500;
 }
 
 body {
   margin: 0;
   min-width: 320px;
-  color: rgba(243, 184, 255, 0.87);
+  color: rgba(255, 231, 220, 0.87);
   background-color: #000000;
 }
 
