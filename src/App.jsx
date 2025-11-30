@@ -1,5 +1,5 @@
 import { MoveCard } from './components/MoveCrad'
-import data from './data/dataMoves.json'
+import MOVIES from './data/dataMoves.json'
 
 function App() {
  
@@ -15,13 +15,9 @@ function App() {
     className='h-8 w-auto'/>
     </header>
       <main className='flex gap-6'>
-        {data.movies.map((movie,index)=>(
-          <div key={index}>
-           
-            <MoveCard imageMove={movie.img} 
-            titleMove={movie.title} 
-            descriptionMove={movie.description}
-            ratingMove={movie.rating} urlMove={movie.url}/>
+        {MOVIES.MOVIES.map((movie,index)=>(
+          <div key={index}>           
+            <MoveCard {...movie}/>
           </div>
         ))}        
       </main>      

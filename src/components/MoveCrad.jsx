@@ -1,6 +1,13 @@
 import { FavoriteButton } from "./FavoriteButton";
 
-export function MoveCard({titleMove, descriptionMove,imageMove, ratingMove, urlMove}){
+export function MoveCard({...movies}){
+    
+    const titleMove = movies.title;
+    const descriptionMove = movies.description;
+    const imageMove = movies.img;
+    const ratingMove = movies.rating;
+    const urlMove = movies.url;
+
     return <div className="relative w-[300px] rounded-2xl overflow-hidden
         bg-neutral-800 shadow-lg hover:scale-105 transition-transform
         will-change-transform duration-300">
