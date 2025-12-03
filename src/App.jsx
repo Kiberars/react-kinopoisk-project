@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { MoveCard } from './components/MoveCrad'
 import MOVIES from './data/dataMoves.json'
+import { useDebounce } from './hooks/useDebounce';
 
 function App() {
   const [serachTerm, setSerachTerm] = useState('')
-  const moves =MOVIES.MOVIES.filter(movie => movie.title.toLocaleLowerCase().includes(serachTerm.toLowerCase()))
- 
+  const debouncedSearch = useDebounce(serachTerm,600)
+  const moves =MOVIES.MOVIES.filter(movie => 
+    movie.title.toLocaleLowerCase().includes(debouncedSearch.toLowerCase()))
+  
 
 
   return (
