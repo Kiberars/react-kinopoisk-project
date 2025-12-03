@@ -1,10 +1,13 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(243, 184, 255, 0.87);
   background-color: #000000;
 
@@ -42,15 +45,15 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #3f0088;
-  color: #e5cfff;
+  /* background-color: #3f0088;
+  color: #e5cfff; */
   cursor: pointer;
   transition: background-color 0.3s;
 }
-button:hover {
+/* button:hover {
   background-color: #e5cfff;
   color: #3f0088;
-}
+} */
 button:focus,
 button:focus-visible {
   outline: 3px auto solid #ffffff55;
