@@ -15,7 +15,7 @@ function App() {
 
 
   return (
-    <div className='min-h-screen w-full bg-white dark:bg-black text-black dark:text-white px-6 py-5'>
+    <div className='min-h-screen w-full bg-(--white-bg) dark:bg-(--black-bg) text-black dark:text-white px-6 py-5'>
     <header className='mb-10 flex items-center justify-between'>
     <img 
     src="/MoveImage/Kinopoisk_colored_logo.png" 
