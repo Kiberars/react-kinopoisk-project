@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { FavoriteButton } from "./FavoriteButton";
+import { memo, useState } from "react";
+import FavoriteButton from "./FavoriteButton";
 import { ModalTrailer } from "./UI/ModalTrailer";
 
-export function MoveCard({...movies}){
+function MoveCard({...movies}){
 
     const [isOpenTrailer, setOpenTriler] = useState(false)
     
@@ -44,3 +44,4 @@ export function MoveCard({...movies}){
         </div>
    
 }
+export default memo(MoveCard)

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MoveCard } from './components/MoveCrad'
+import MoveCard from './components/MoveCrad'
 import MOVIES from './data/dataMoves.json'
 import { useDebounce } from './hooks/useDebounce';
 import { useTheme } from './hooks/useTheme';
