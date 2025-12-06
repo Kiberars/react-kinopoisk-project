@@ -46,7 +46,8 @@ function App() {
           </div>
         )):
         <p>Фильмы не найдены!</p>}        
-      </main>      
+      </main>
+      
     </div>
   );
 };

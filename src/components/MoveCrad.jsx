@@ -1,17 +1,33 @@
+import { useState } from "react";
 import { FavoriteButton } from "./FavoriteButton";
+import { ModalTrailer } from "./UI/ModalTrailer";
 
 export function MoveCard({...movies}){
+
+    const [isOpenTrailer, setOpenTriler] = useState(false)
     
     const titleMove = movies.title;
     const descriptionMove = movies.description;
     const imageMove = movies.img;
     const ratingMove = movies.rating;
     const urlMove = movies.url;
+    const trailerVK = movies.trailerVK;
 
-    return <div className="relative w-[300px] rounded-2xl overflow-hidden
-        bg-neutral-400 dark:bg-neutral-800 shadow-lg hover:scale-105 transition-transform
-        will-change-transform duration-300">
-            <div className="absolute top-0 left-0 w-full
+    return <button className="relative w-[300px] rounded-2xl overflow-hidden
+        bg-neutral-400 dark:bg-neutral-800 shadow-lg hover:scale-108 hover:translate-y-5 transition-transform
+        will-change-transform duration-300" onClick={()=>{setOpenTriler(true)}}>
+            
+            {isOpenTrailer && <ModalTrailer onClose={()=>{
+                setOpenTriler(false)
+            }}>
+                <iframe src={`https://vkvideo.ru/video_ext.php?oid=-${trailerVK}&hd=3`} width="373" height="210" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen /> 
+
+                </ModalTrailer>}
+            
+            
+            
+            
+            <div className="absolute top-0 left-0 w-full text-left
             bg-gradient-to-t from-neutral-400/00 to-white/100 
             dark:bg-gradient-to-t dark:from-black/00 dark:to-black/100 
             p-2 text-sm text-black dark:text-white font-semibold ">{titleMove}</div>    
@@ -21,10 +37,10 @@ export function MoveCard({...movies}){
                 <FavoriteButton/>
             </div>
            
-            <a href={urlMove} target="_blank">
+            {/* <a href={urlMove} target="_blank"> */}
             <img src={imageMove} alt={titleMove} className="w-[300px]  h-[400px] object-cover"/>
-            </a>
+            {/* </a> */}
             <div className="h-[120px] p-2 text-black dark:text-white text-justify">{descriptionMove}</div>
-        </div>
+        </button>
    
 }
