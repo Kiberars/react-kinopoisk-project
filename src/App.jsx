@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import MoveCard from './components/MoveCrad'
 import MOVIES from './data/dataMoves.json'
 import { useDebounce } from './hooks/useDebounce';
@@ -8,9 +8,15 @@ function App() {
   const {theme, toggleTheme} = useTheme()
 
   const [serachTerm, setSerachTerm] = useState('')
-  const debouncedSearch = useDebounce(serachTerm,600)
-  const moves =MOVIES.MOVIES.filter(movie => 
+  const debouncedSearch = useDebounce(serachTerm,500)
+
+  
+  const moves = useMemo(()=>{
+    return MOVIES.MOVIES.filter(movie => 
     movie.title.toLocaleLowerCase().includes(debouncedSearch.toLowerCase()))
+  },[debouncedSearch])
+  
+  
   
 
 
