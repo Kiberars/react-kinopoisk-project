@@ -13,16 +13,16 @@ export function MoveCard({...movies}){
     const urlMove = movies.url;
     const trailerVK = movies.trailerVK;
 
-    return <button className="relative w-[300px] rounded-2xl overflow-hidden
+    return <div className="relative w-[300px] rounded-2xl overflow-hidden
         bg-neutral-400 dark:bg-neutral-800 shadow-lg hover:scale-108 hover:translate-y-5 transition-transform
-        will-change-transform duration-300" onClick={()=>{setOpenTriler(true)}}>
+        will-change-transform duration-300">
             
-            {isOpenTrailer && <ModalTrailer onClose={()=>{
+            {isOpenTrailer && (<ModalTrailer onClose={()=>{
                 setOpenTriler(false)
             }}>
                 <iframe src={`https://vkvideo.ru/video_ext.php?oid=-${trailerVK}&hd=3`} width="373" height="210" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen /> 
 
-                </ModalTrailer>}
+                </ModalTrailer>)}
             
             
             
@@ -37,10 +37,10 @@ export function MoveCard({...movies}){
                 <FavoriteButton/>
             </div>
            
-            {/* <a href={urlMove} target="_blank"> */}
-            <img src={imageMove} alt={titleMove} className="w-[300px]  h-[400px] object-cover"/>
-            {/* </a> */}
+           
+            <img src={imageMove} alt={titleMove} onClick={()=>{setOpenTriler(true)}} className="w-[300px]  h-[400px] object-cover"/>
+            
             <div className="h-[120px] p-2 text-black dark:text-white text-justify">{descriptionMove}</div>
-        </button>
+        </div>
    
 }
