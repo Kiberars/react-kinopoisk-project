@@ -1,10 +1,13 @@
-import { memo, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import FavoriteButton from "./FavoriteButton";
 import { ModalTrailer } from "./UI/ModalTrailer";
 
 function MoveCard({...movies}){
 
     const [isOpenTrailer, setOpenTriler] = useState(false)
+    const openTrailer = useCallback(()=>{
+        setOpenTriler(true)
+    },[])
     
     const titleMove = movies.title;
     const descriptionMove = movies.description;
@@ -38,7 +41,7 @@ function MoveCard({...movies}){
             </div>
            
            
-            <img src={imageMove} alt={titleMove} onClick={()=>{setOpenTriler(true)}} className="w-[300px]  h-[400px] object-cover"/>
+            <img src={imageMove} alt={titleMove} onClick={openTrailer} className="w-[300px]  h-[400px] object-cover"/>
             
             <div className="h-[120px] p-2 text-black dark:text-white text-justify">{descriptionMove}</div>
         </div>
