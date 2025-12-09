@@ -1,13 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import {ThemProvider} from './components/ThemProvider.jsx'
-import './index.css'
-import App from './App.jsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ThemProvider } from './components/ThemProvider.jsx';
+import './index.css';
+import { MainRoutes } from './MainRoutes.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemProvider>
-    <App />
+      <MainRoutes />
     </ThemProvider>
-  </StrictMode>,
-)
+  </StrictMode>
+);

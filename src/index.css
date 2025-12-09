@@ -1,18 +1,19 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer utilities{
-  @keyframes fadeIn{
-    from{
+@layer utilities {
+  @keyframes fadeIn {
+    from {
       opacity: 0;
       transform: scale(0.95);
-    }to{
+    }
+    to {
       opacity: 1;
       transform: scale(1);
     }
   }
-  .animate-fadeIn{
+  .animate-fadeIn {
     animation: fadeIn 0.2s ease-out;
   }
 }
@@ -33,7 +34,6 @@
   --orange-color: #ff5500;
   --black-bg: rgb(54, 54, 54);
   --white-bg: rgb(199, 199, 199);
- 
 }
 
 a {
@@ -52,14 +52,19 @@ body {
   background-color: #000000;
 }
 
-h1,h2,h3,h4,h5,h6  {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
   margin-bottom: 0.5em;
 }
-button{
+button {
   cursor: pointer;
 }
-button.btn {
+.btn {
   border-radius: 4px;
   border: none;
   padding: 0.6em 1.2em;
@@ -69,27 +74,28 @@ button.btn {
   /* background-color: #3f0088;
   color: #e5cfff; */
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 /* button:hover {
   background-color: #e5cfff;
   color: #3f0088;
 } */
-button.btn:focus,
-button.btn:focus-visible {
+.btn:focus,
+.btn:focus-visible {
   outline: 3px auto solid #ffffff55;
 }
 
-section{
+section {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 8px;
 }
-::-webkit-scrollbar-track{
+::-webkit-scrollbar-track {
   background: #111;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #3f008855;
   border-radius: 4px;
 }
