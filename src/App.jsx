@@ -34,7 +34,7 @@ function App() {
       className='border borader-white/15 px-2 py-2 rounded outline-0'/>
     
       <button onClick={toggleTheme} 
-      className='text-sm px-3 py-1 rounded border  
+      className=' px-2 py-2 rounded outline-0 border  
       border-white/20  
       bg-black/40 hover:bg-black/80 border-white/15 text-black hover:text-white
       dark:bg-white/40 dark:hover:bg-white/80 dark:border-white/10 dark:text-white dark:hover:text-black
