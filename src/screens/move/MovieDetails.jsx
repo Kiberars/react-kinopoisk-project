@@ -1,8 +1,13 @@
-import { useMemo } from 'react';
+import { lazy, Suspense, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 import MOVIES from '../../data/dataMoves.json';
-import { ModalTrailer } from '../../components/UI/ModalTrailer';
-import { MovieComments } from './MovieComments';
+
+
+const LazyMovieComments = lazy(()=>
+  import('./MovieComments').then(c=>({
+    default: c.MovieComments
+  }))
+)
 
 export function MovieDetails() {
   const { id } = useParams();
@@ -37,7 +42,9 @@ export function MovieDetails() {
           <div className='text-sm'>
             <p>{movie.description}</p>
           </div>
-                 <MovieComments />
+          <Suspense fallback={<div>Загрузка...</div>}>
+                 <LazyMovieComments />
+          </Suspense>
         </div>
 
       </div>     

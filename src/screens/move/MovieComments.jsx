@@ -16,4 +16,4 @@ export function MovieComments(){
             
         </ul>
     </div>
-}s
+}
