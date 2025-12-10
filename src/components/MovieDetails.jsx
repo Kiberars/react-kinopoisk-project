@@ -12,7 +12,7 @@ export function MovieDetails() {
   if (!movie) return <p className='text-center mt-10 text-gray-400'>Фильмы не найдены!</p>;
 
   return (
-    <div className='min-h-screen px-6 py-10 bg-(--white-bg) dark:bg-(--black-bg) text-black dark:text-white'>
+    <div className='min-h-screen bg-(--white-bg) dark:bg-(--black-bg) text-black dark:text-white'>
       <div className='flex flex-col md:flex-row gap-10 items-start'>
         <img src={movie.img} alt={movie.title} className="w-2/3 md:w-1/3 rounded-xl shadow-lg object-cover" />
         <div className='flex-1 space-y-4'>
