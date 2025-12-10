@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import FavoriteButton from './FavoriteButton';
-import { ModalTrailer } from './UI/ModalTrailer';
+import { ModalTrailer } from '../../components/UI/ModalTrailer';
 import { Link } from 'react-router-dom';
 
 function MoveCard({ ...movies }) {

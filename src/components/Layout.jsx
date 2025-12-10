@@ -17,5 +17,6 @@ export function Layout(){
     </header>
     )}
     <Outlet />
+    
     </div>
 }

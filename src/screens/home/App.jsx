@@ -1,8 +1,8 @@
 import { useMemo, useState } from 'react';
-import MoveCard from './components/MoveCrad'
-import MOVIES from './data/dataMoves.json'
-import { useDebounce } from './hooks/useDebounce';
-import { useTheme } from './hooks/useTheme';
+import MoveCard from './MoveCrad'
+import MOVIES from '../../data/dataMoves.json'
+import { useDebounce } from '../../hooks/useDebounce';
+import { useTheme } from '../../hooks/useTheme';
 
 function App() {
   const {theme, toggleTheme} = useTheme()

@@ -1,7 +1,8 @@
 import { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
-import MOVIES from '.././data/dataMoves.json';
-import { ModalTrailer } from './UI/ModalTrailer';
+import MOVIES from '../../data/dataMoves.json';
+import { ModalTrailer } from '../../components/UI/ModalTrailer';
+import { MovieComments } from './MovieComments';
 
 export function MovieDetails() {
   const { id } = useParams();
@@ -36,8 +37,9 @@ export function MovieDetails() {
           <div className='text-sm'>
             <p>{movie.description}</p>
           </div>
+                 <MovieComments />
         </div>
-       
+
       </div>     
     </div>
   );
